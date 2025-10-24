@@ -1,16 +1,77 @@
-.category-btn{
-    margin: 5px;
-    border-radius: 12px;
-    border: 1px solid #423e08;
-    background: rgb(92, 90, 89);
-    overflow: auto; 
-    scrollbar-width: none;
-    display: flex;
-    justify-content: center; 
-    align-items: center;
+/* Container das categorias */
+.categories {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 }
-.category-btn:hover{
-    background: #79292d;
+.categories::-webkit-scrollbar {
+  display: none;
+}
+.categories {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+}
+.category-btn {
+    margin: 5px;
     color: white;
+    min-width: 80px;
+    justify-content: center;
+    border-radius: 12px;
+    border: 1px solid #3f3b02;
+    background: rgb(92, 90, 89);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     transition: 0.2s;
+}
+
+.category-btn:hover {
+  background: #a74a4e;
+  color: white;
+}
+
+.category-btn span:first-child {
+  flex-shrink: 0; 
+  align-items: center;
+  justify-content: center;
+}
+
+.category-btn span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+@media (max-width: 900px) {
+  .MuiStack-root {
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+  }
+
+  .category-btn {
+    flex-direction: row;
+    max-width: 110px; 
+    justify-content: flex-start;
+    padding: 10px;
+  }
+
+  .category-btn span:last-child {
+    max-width: 90px;
+  }
+
+  .MuiStack-root::-webkit-scrollbar {
+    display: none;
+  }
+  .MuiStack-root {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
 }
