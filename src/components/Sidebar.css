@@ -1,0 +1,16 @@
+.category-btn{
+    margin: 5px;
+    border-radius: 12px;
+    border: 1px solid #423e08;
+    background: rgb(92, 90, 89);
+    overflow: auto; 
+    scrollbar-width: none;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+.category-btn:hover{
+    background: #79292d;
+    color: white;
+    transition: 0.2s;
+}
