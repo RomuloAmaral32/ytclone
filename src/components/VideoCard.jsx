@@ -8,6 +8,7 @@ import { demoThumbnailUrl, demoChannelUrl, demoChannelTitle,demoVideoUrl, demoVi
 const VideoCard = ({ video: { id: { VideoId }, snippet }}) => {
   return (
     <Card
+    
         sx={{borderRadius: 4, marginRight:1, border:'none', width:{ md: '300px', xs: '100'}, boxShadow:'none'} }>
         <Link to={VideoId ? `/video/${VideoId}` : demoVideoUrl }>
 
@@ -17,7 +18,10 @@ const VideoCard = ({ video: { id: { VideoId }, snippet }}) => {
                 sx={{ width: 300, height: 180 }}/>
         </Link>
        <CardContent sx={{ backgroundColor: '#1e1e1e', height: '80px' }}>
-            <Link to={VideoId ? `/video/${VideoId}` : demoVideoUrl}>
+            <Link to={VideoId ? `/video/${VideoId}` : demoVideoUrl}
+            style={{ 
+          textDecoration: 'none' }}>
+            
                 <Typography variant="subtitle1" fontWeight="bold" color="#FFF">
                 {snippet?.title?.slice(0, 60) || demoVideoTitle.slice(0, 60)}
                 </Typography>
